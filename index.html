@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Adrian F. Padilla — Web & Mobile Developer | Freelance Web Designer & Developer based in Los Baños, Laguna.">
+  <title>Adrian F. Padilla | Web & Mobile Developer</title>
+  <link rel="stylesheet" href="design.css">
+  <link rel="icon" type="image/jpeg" href="ap-logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <header class="site-nav" id="siteNav">
+    <div class="nav-inner wrap">
+      <a href="#top" class="logo" aria-label="AP Tech home">
+        <img src="ap-logo.jpg" alt="AP logo" class="logo-img" width="36" height="36">
+        <span class="logo-text">AP Tech</span>
+      </a>
+      <nav class="links" id="navLinks" aria-label="Main navigation">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#certificates" class="nav-link">Certificates</a>
+        <a href="#contact" class="nav-link nav-cta">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle light or dark mode" title="Toggle theme">
+          <span class="theme-icon theme-icon-sun" aria-hidden="true">☀</span>
+          <span class="theme-icon theme-icon-moon" aria-hidden="true">☾</span>
+        </button>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="top">
+      <div class="wrap hero-inner">
+        <div class="hero-content">
+          <p class="eyebrow">Freelance Web & Mobile Developer</p>
+          <h1>Hello, I’m <span class="accent">Adrian F. Padilla</span></h1>
+          <p class="pitch">
+            3rd-year BSIT student from Los Baños, Laguna specializing in Web and Mobile Application Development.
+            I design and build clean, responsive websites and apps that help people and businesses grow online.
+          </p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary inquire-btn">Inquire me</a>
+            <a href="#projects" class="btn btn-ghost work-btn">View My Work</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat">
+              <span class="num">3+</span>
+              <span class="label">Years learning & building</span>
+            </div>
+            <div class="stat">
+              <span class="num">5</span>
+              <span class="label">Projects developed</span>
+            </div>
+            <div class="stat">
+              <span class="num">1</span>
+              <span class="label">Project deployed</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="avatar-card">
+            <div class="avatar-placeholder">
+              <img src="prof.jpg" alt="Adrian F. Padilla" class="avatar-photo">
+            </div>
+            <div class="avatar-badge">Available for freelance</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about" id="about">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">About me</p>
+          <h2>Technical background & skills</h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-text">
+            <p>
+              I started web development in high school and graduated from Trace College under
+              Information and Communications Technology (ICT). I’m now pursuing a Bachelor of Science
+              in Information Technology at Laguna State Polytechnic University – Los Baños Campus,
+              specializing in Web and Mobile Development Applications.
+            </p>
+            <p>
+              Alongside coding, I also work as a Discord moderator — managing communities, enforcing
+              guidelines, and helping create positive online spaces. I enjoy turning ideas into
+              functional, user-friendly digital products.
+            </p>
+            <div class="skills-block">
+              <h3>Technical knowledge</h3>
+              <ul class="skill-tags">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>Java</li>
+                <li>Python</li>
+                <li>C#</li>
+                <li>MySQL</li>
+                <li>Responsive Design</li>
+                <li>UI/UX Basics</li>
+              </ul>
+            </div>
+          </div>
+          <div class="about-facts">
+            <div class="fact-card">
+              <div class="num">3+</div>
+              <div class="label">Years of experience</div>
+            </div>
+            <div class="fact-card">
+              <div class="num">5</div>
+              <div class="label">Projects developed</div>
+            </div>
+            <div class="fact-card">
+              <div class="num">1</div>
+              <div class="label">Project deployed</div>
+            </div>
+            <div class="fact-card">
+              <div class="num">Front End</div>
+              <div class="label">Web & Mobile focus</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section services" id="services">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">What I offer</p>
+          <h2>Services</h2>
+          <p class="section-desc">From concept to deployment — focused on clean code, responsive design, and clear communication.</p>
+        </div>
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">◇</div>
+            <h3>Web Design</h3>
+            <p>Modern, accessible layouts with strong visual hierarchy. Wireframes, UI mockups, and design systems tailored to your brand.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">◈</div>
+            <h3>Web Development</h3>
+            <p>Responsive front-end development with HTML, CSS, and JavaScript. Clean structure, fast load times, and SEO-friendly markup.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">⬡</div>
+            <h3>Mobile-Friendly Sites</h3>
+            <p>Mobile-first builds that look and work great on phones, tablets, and desktops — essential for today’s users.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">◎</div>
+            <h3>Community & Discord</h3>
+            <p>Discord server setup, moderation, and community management so your online space stays organized and welcoming.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section projects" id="projects">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Selected work</p>
+          <h2>Projects</h2>
+          <p class="section-desc">A few projects that show my skills in design, development, and problem-solving.</p>
+        </div>
+        <div class="carousel" id="projectsCarousel" data-carousel>
+          <button type="button" class="carousel-btn carousel-prev" aria-label="Previous project">‹</button>
+          <div class="carousel-viewport">
+            <div class="carousel-track">
+              <article class="project-card carousel-slide is-active">
+                <div class="project-visual project-visual--1">
+                  <span class="project-tag">Web App</span>
+                </div>
+                <div class="project-body">
+                  <h3>Student Admission Form</h3>
+                  <p>A responsive form for students to submit their admission applications. Built with HTML, CSS, and JavaScript; focus on clear information hierarchy and mobile usability.</p>
+                  <div class="project-meta"><span>HTML · CSS · JS</span></div>
+                </div>
+              </article>
+              <article class="project-card carousel-slide">
+                <div class="project-visual project-visual--2">
+                  <span class="project-tag">Mobile App</span>
+                </div>
+                <div class="project-body">
+                  <h3>Mobile Calculator</h3>
+                  <p>A simple mobile calculator app built with Android Studio. Features a clean interface and smooth user experience.</p>
+                  <div class="project-meta"><span>Java</span></div>
+                </div>
+              </article>
+              <article class="project-card carousel-slide">
+                <div class="project-visual project-visual--3">
+                  <span class="project-tag">Mobile App</span>
+                </div>
+                <div class="project-body">
+                  <h3>Mobile Score Board</h3>
+                  <p>A mobile app for tracking scores in basketball, built with Android Studio.</p>
+                  <div class="project-meta"><span>Java</span></div>
+                </div>
+              </article>
+              <article class="project-card carousel-slide">
+                <div class="project-visual project-visual--1">
+                  <span class="project-tag">Website</span>
+                </div>
+                <div class="project-body">
+                  <h3>What The App</h3>
+                  <p>“WhatTheApp” is a web-based platform that collects, organizes, and displays different technology-related resources in one place.</p>
+                  <div class="project-meta"><span>HTML · CSS · JS</span></div>
+                </div>
+              </article>
+            </div>
+          </div>
+          <button type="button" class="carousel-btn carousel-next" aria-label="Next project">›</button>
+          <div class="carousel-dots" role="tablist" aria-label="Project slides"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section certificates" id="certificates">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Credentials</p>
+          <h2>Certificates & Events</h2>
+          <p class="section-desc">Workshops, seminars, and competitions I’ve joined to grow my skills.</p>
+        </div>
+        <div class="filter-row" id="filterRow" role="group" aria-label="Filter certificates">
+          <button type="button" class="filter-btn active" data-filter="all">All</button>
+          <button type="button" class="filter-btn" data-filter="workshop">Workshop</button>
+          <button type="button" class="filter-btn" data-filter="seminar">Seminar</button>
+          <button type="button" class="filter-btn" data-filter="tournament">Tournament</button>
+        </div>
+        <div class="carousel" id="certsCarousel" data-carousel>
+          <button type="button" class="carousel-btn carousel-prev" aria-label="Previous certificate">‹</button>
+          <div class="carousel-viewport">
+            <div class="carousel-track" id="workGrid"></div>
+          </div>
+          <button type="button" class="carousel-btn carousel-next" aria-label="Next certificate">›</button>
+          <div class="carousel-dots" role="tablist" aria-label="Certificate slides"></div>
+        </div>
+        <div class="cv-cta">
+          <p class="cv-cta-text">Want the full overview of my background and education?</p>
+          <a href="cv.html" class="btn btn-primary">View Curriculum Vitae</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Let’s work together</p>
+          <h2>Get in touch</h2>
+          <p class="section-desc">Have a project in mind or just want to say hello? Send a message — I’ll get back to you as soon as I can.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-text">
+            <p class="contact-lead">Feel free to contact me for inquiries, freelance work, or collaboration.</p>
+            <ul class="contact-details">
+              <li>
+                <strong>Email</strong>
+                <a href="mailto:adrianpadilla8296@gmail.com">adrianpadilla8296@gmail.com</a>
+              </li>
+              <li>
+                <strong>Location</strong>
+                <span>Los Baños, Laguna, Philippines</span>
+              </li>
+              <li>
+                <strong>Role</strong>
+                <span>Web & Mobile Developer · Discord Moderator</span>
+              </li>
+            </ul>
+            <div class="social-list">
+              <a href="mailto:adrianpadilla8296@gmail.com" class="social-link">Email</a>
+              <a href="#" class="social-link" rel="noopener">Discord</a>
+              <a href="#" class="social-link" rel="noopener">GitHub</a>
+            </div>
+          </div>
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="field" id="nameField">
+              <label for="nameInput">Name</label>
+              <input type="text" id="nameInput" name="name" placeholder="Your name" autocomplete="name" required>
+              <div class="err" id="nameErr" role="alert"></div>
+            </div>
+            <div class="field" id="emailField">
+              <label for="emailInput">Email</label>
+              <input type="email" id="emailInput" name="email" placeholder="you@email.com" autocomplete="email" required>
+              <div class="err" id="emailErr" role="alert"></div>
+            </div>
+            <div class="field" id="messageField">
+              <label for="messageInput">Message</label>
+              <textarea id="messageInput" name="message" rows="5" placeholder="Tell me about your project or inquiry" required></textarea>
+              <div class="err" id="messageErr" role="alert"></div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">Send message</button>
+            <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>© <span id="year"></span> Adrian F. Padilla · AP Tech. Built with care for web & mobile.</p>
+      <a href="#top" class="back-top">Back to top</a>
+    </div>
+  </footer>
+
+  <script src="framework.js"></script>
+</body>
+</html>
