@@ -103,8 +103,22 @@ textarea {
 }
 
 .wrap {
-  width: min(1120px, 92%);
+  width: min(1280px, 94%);
   margin-inline: auto;
+}
+
+html.menu-open,
+body.menu-open {
+  overflow: hidden !important;
+  touch-action: none !important;
+  overscroll-behavior: none;
+}
+
+body.menu-open {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  right: 0;
 }
 
 .section {
@@ -157,11 +171,18 @@ textarea {
   left: 0;
   right: 0;
   height: var(--nav-h);
-  z-index: 100;
+  z-index: 250;
   background: var(--nav-bg);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid transparent;
   transition: border-color var(--transition), background var(--transition);
+}
+
+/* Solid header when mobile menu is open so nothing shows through */
+body.menu-open .site-nav {
+  background: var(--bg);
+  backdrop-filter: none;
+  border-bottom-color: var(--border);
 }
 
 .site-nav.scrolled {
@@ -602,7 +623,7 @@ textarea {
 
 .carousel-viewport {
   width: 100%;
-  max-width: 420px;
+  max-width: 480px;
   overflow: visible;
   perspective: 1000px;
   padding-inline: 0.5rem;
@@ -674,47 +695,45 @@ textarea {
   z-index: 1;
 }
 
+.carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  margin-top: 0.25rem;
+}
+
 .carousel-btn {
-  position: absolute;
-  top: 40%;
-  transform: translateY(-50%);
-  z-index: 5;
-  width: 44px;
-  height: 44px;
+  position: static;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   border: 1px solid var(--border-strong);
   background: var(--bg-card);
   color: var(--text);
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   line-height: 1;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: var(--shadow);
-  transition: background var(--transition), border-color var(--transition), color var(--transition), opacity var(--transition);
+  box-shadow: none;
+  transition: background var(--transition), border-color var(--transition), color var(--transition);
 }
 
 .carousel-btn:hover {
   background: var(--accent);
   border-color: var(--accent);
   color: #fff;
-  opacity: 1;
 }
 
 [data-theme="dark"] .carousel-btn:hover {
   color: #0b0f14;
 }
 
-.carousel-prev {
-  left: 0;
-}
-
-.carousel-next {
-  right: 0;
-}
-
-/* CV download under credentials */
+/* CV under credentials */
 .cv-cta {
   margin-top: 2.5rem;
   text-align: center;
@@ -734,6 +753,7 @@ textarea {
   display: flex;
   gap: 0.5rem;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
 }
 
@@ -1072,23 +1092,6 @@ textarea {
   .contact-grid {
     grid-template-columns: 1fr;
   }
-
-  .carousel-prev {
-    left: 4px;
-  }
-
-  .carousel-next {
-    right: 4px;
-  }
-
-  .carousel-btn {
-    opacity: 0.55;
-  }
-
-  .carousel-btn:hover,
-  .carousel-btn:focus {
-    opacity: 1;
-  }
 }
 
 @media (max-width: 720px) {
@@ -1101,22 +1104,68 @@ textarea {
     top: var(--nav-h);
     left: 0;
     right: 0;
-    background: var(--nav-bg-scrolled);
-    backdrop-filter: blur(12px);
+    bottom: 0;
+    /* Semi-transparent so page content shows behind */
+    background: rgba(11, 15, 20, 0.72);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
     flex-direction: column;
-    padding: 1rem;
-    gap: 0.25rem;
-    border-bottom: 1px solid var(--border);
+    justify-content: flex-start;
+    padding: 1.25rem 1rem 2rem;
+    gap: 0.5rem;
+    border-bottom: none;
     transform: translateY(-120%);
     opacity: 0;
     pointer-events: none;
     transition: transform 0.25s ease, opacity 0.25s ease;
+    overflow: hidden;
+    overscroll-behavior: none;
+    touch-action: none;
+    z-index: 200;
+  }
+
+  [data-theme="light"] .links {
+    background: rgba(244, 246, 250, 0.78);
   }
 
   .links.open {
     transform: translateY(0);
     opacity: 1;
     pointer-events: auto;
+  }
+
+  /* Solid link pills so labels stay readable over the blurred page */
+  .links .nav-link {
+    touch-action: manipulation;
+    width: 100%;
+    text-align: center;
+    padding: 0.95rem 1rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text);
+    background: var(--bg-card);
+    border: 1px solid var(--border-strong);
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  }
+
+  .links .nav-link:hover,
+  .links .nav-link.active {
+    color: var(--accent);
+    background: var(--bg-elevated);
+    border-color: var(--accent);
+  }
+
+  .links .nav-link.nav-cta {
+    margin-left: 0;
+    margin-top: 0.35rem;
+    background: var(--accent);
+    color: #0b0f14;
+    border-color: var(--accent);
+  }
+
+  [data-theme="light"] .links .nav-link.nav-cta {
+    color: #fff;
   }
 
   .nav-link {
@@ -1159,7 +1208,7 @@ textarea {
 
   .carousel-viewport {
     max-width: 100%;
-    padding-inline: 2.5rem;
+    padding-inline: 0.5rem;
   }
 
   .carousel-track {
@@ -1167,31 +1216,10 @@ textarea {
     min-height: 380px;
   }
 
-  /* Arrows: semi-transparent so card text stays readable */
   .carousel-btn {
     width: 36px;
     height: 36px;
     font-size: 1.25rem;
-    opacity: 0.45;
-    background: rgba(22, 29, 39, 0.55);
-    backdrop-filter: blur(6px);
-  }
-
-  [data-theme="light"] .carousel-btn {
-    background: rgba(255, 255, 255, 0.65);
-  }
-
-  .carousel-btn:hover,
-  .carousel-btn:focus {
-    opacity: 0.95;
-  }
-
-  .carousel-prev {
-    left: 2px;
-  }
-
-  .carousel-next {
-    right: 2px;
   }
 
   .links {

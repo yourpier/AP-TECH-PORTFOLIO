@@ -90,16 +90,42 @@
   window.addEventListener("scroll", updateScroll, { passive: true });
   updateScroll();
 
+  var scrollLockY = 0;
+
+  function preventTouchScroll(e) {
+    // Allow taps on links; block drag that scrolls the page behind the menu
+    if (e.target.closest && e.target.closest("a.nav-link")) return;
+    e.preventDefault();
+  }
+
+  function lockBodyScroll(lock) {
+    if (lock) {
+      scrollLockY = window.scrollY || document.documentElement.scrollTop;
+      document.documentElement.classList.add("menu-open");
+      document.body.classList.add("menu-open");
+      document.body.style.top = "-" + scrollLockY + "px";
+      document.addEventListener("touchmove", preventTouchScroll, { passive: false });
+    } else {
+      document.documentElement.classList.remove("menu-open");
+      document.body.classList.remove("menu-open");
+      document.body.style.top = "";
+      document.removeEventListener("touchmove", preventTouchScroll);
+      window.scrollTo(0, scrollLockY);
+    }
+  }
+
   if (navToggle && navLinks) {
     navToggle.addEventListener("click", function () {
       const open = navLinks.classList.toggle("open");
       navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+      lockBodyScroll(open);
     });
 
     navLinks.querySelectorAll(".nav-link").forEach(function (link) {
       link.addEventListener("click", function () {
         navLinks.classList.remove("open");
         navToggle.setAttribute("aria-expanded", "false");
+        lockBodyScroll(false);
       });
     });
   }
